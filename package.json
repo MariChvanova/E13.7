@@ -1,0 +1,37 @@
+{
+  "name": "E13.7",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack serve --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
+    "server": "json-server --watch db.json --port 3001",
+    "prepare": "husky install",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
+
+
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{css,scss,json,html}": [
+      "prettier --write"
+    ]
+  },
+
+
+  "private": true,
+  "devDependencies": {
+    "eslint": "^9.23.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.0",
+    "prettier": "^3.5.3",
+    "webpack-dev-server": "^5.2.1",
+    "webpack-merge": "^6.0.1"
+  }
+}
